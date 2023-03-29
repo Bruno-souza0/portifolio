@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:wght@400;600&display=swap');
+
+:root {
+    --cor-primaria: #000000;
+    --cor-secundaria: #f6f6f6;
+    --cor-terciaria: #22d4fd;
+    --cor-hover: #272727;
+
+    --font-primaria: 'Krona One', sans-serif; 
+    --font-secundaria:'Montserrat', sans-serif;
+    /* VARIAVEIS GLOBAIS, UTILIZADAS PARA OTIMIZAR NA REPETIÇÃO DE CÓDIGO, SENDO POSSÍVEL UTILIZAR OS RECURSO SOMENTE PELO NOME DA VARIAVEL. ESSE RECURSO PERMITE ALTERAR TODAS AS CORES, FONTS ENTRE OUTROS DO PROJETO DE UMA SÓ VEZ CASO SEJA NECESSÁRIO.*/
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    box-sizing: border-box;
+    background-color: var(--cor-primaria);
+    color: var(--cor-secundaria);
+}
+.cabecalho {
+    padding: 2% 0% 0% 15%;
+}
+.cabecalho__menu {
+    display: flex;
+    gap: 80px;
+}
+.cabecalho__menu__link {
+    font-family: var(--font-secundaria);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--cor-terciaria);
+    text-decoration: none;
+}
+
+
+.apresentacao {
+    padding: 5% 15%;
+    display: flex;
+    align-items: center;
+    /*https://css-tricks.com/snippets/css/a-guide-to-flexbox/ guia completo de Flexbox*/
+    justify-content: space-between;
+    gap: 82px; /*Definindo espaço entre os elementos, propriedade que permite independentemente da proporcionalidade da tela, os arquivos mantenham sempre separados*/
+}
+.apresentacao__conteudo {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    
+}
+.apresentacao__conteudo__titulo {
+    font-size: 2.25rem; /* Unidade de medida REM utilizada para que a pagina HTML respeite o que o usuário definiu direto no navegador. Ex: caso ele escolha letras grandes, se ele recarregar a nossa pagina caso não esteja na propriedade REM não será alterado o tamanho do texto. */
+    font-family: var(--font-primaria);
+}
+.titulo-destaque{
+    color: var(--cor-terciaria);
+}
+.apresentacao__conteudo__texto {
+    font-size: 1.5rem;
+    font-family: var(--font-secundaria);
+    ;
+}
+.apresentacao__links {
+    display: flex;
+    flex-direction: column; /*FAZ COM QUE OS ELEMENTOS FICQUEM ALINHADOS EM COLUNAS*/
+    justify-content: space-between;
+    align-items: center;
+    gap: 32px;
+
+}
+.apresentacao__links__subtitulo {
+    font-family: var(--font-primaria);
+    font-weight: 400;
+}
+.apresentacao__links__navegacao {
+    display: flex;
+    justify-content: center; /*UTILIZADO PARA ALINHAR OS ELEMENTOS AO CENTRO*/
+    gap: 16px;
+    border: 2px solid var(--cor-terciaria);
+    width: 50%;
+    text-align: center;
+    border-radius: 8px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding: 21.5px 0;
+    text-decoration: none;
+    color: var(--cor-secundaria);
+    font-family: var(--font-secundaria);
+}
+.apresentacao__links__link:hover {
+    background-color: var(--cor-hover);
+}
+.apresentacao__imagem {
+    width: 50%;
+}
+.rodape {
+    color: var(--cor-primaria);
+    background-color: var(--cor-terciaria);
+    padding: 24px;
+    text-align: center;
+    font-family: var(--font-secundaria);
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+@media (max-width: 1200px) {
+    .cabecalho {
+        padding: 10%;
+    }
+    .cabecalho__menu {
+        justify-content: center; /*Dentro do flexbox é utilizado o justify-content para fazer alinhamentos dos elemtentos*/
+    }
+    .apresentacao {
+        flex-direction: column-reverse; /*COLUMN-REVERSE inverte a posição do elemento*/
+        padding: 5%;
+    }
+    .apresentacao__conteudo {
+        width: auto;/*zerando a largura o arrquivo perde o formato porem é necessário para que seja adequado para dispositivos moveis, definindo como auto ele vai acompanhar o tamanho da tela automatico*/
+    }
+
+
+}
